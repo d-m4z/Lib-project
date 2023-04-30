@@ -7,36 +7,32 @@ use CodeIgniter\Model;
 class BorrowModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'borrows';
+    protected $table            = 'borrow';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'release_date', 'due_date', 'note'
+    ];
 
     // Dates
     protected $useTimestamps = false;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
 
-    // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
+    public function getIdBorrower()
+    {
+        return $this->db->table('borrower')->join('borrow', 'id_borrower = id')->get()->getResult('array');
+    }
 
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
+    public function getIdBook()
+    {
+        return $this->db->table('book')->join('borrow', 'id_book = id')->get()->getResult('array');
+    }
+
+    public function getIdStaff()
+    {
+        return $this->db->table('staff')->join('borrow', 'id_staff = id')->get()->getResult('array');
+    }
 }
