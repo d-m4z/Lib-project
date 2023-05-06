@@ -1,8 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link text-center">
-        <i class="fa fa-book"></i>
-        <span class="brand-text font-weight-light">PERPUS</span>
+    <a href="\" class="brand-link text-center">
+        <i class="text-left fa-regular fa-bookmark"></i> <span class="brand-text font-weight-light">PERPUS</span>
     </a>
 
     <!-- Sidebar -->
@@ -17,89 +16,84 @@
             </div>
         </div>
 
-        <!-- SidebarSearch Form -->
-        <div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-sidebar">
-                        <i class="fas fa-search fa-fw"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-                <li class="nav-itemn">
+                <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
+                <li class="nav-item">
                     <a href="\" class="nav-link active">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fa-solid fa-house" style="color: #ffffff;"></i>
                         <p>
                             Home
-                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                 </li>
-                <li class="nav-itemn">
+                <li class="nav-item">
                     <a href="/about" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fa-solid fa-circle-info"></i>
                         <p>
                             About
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                 </li>
-                <li class="nav-itemn">
+                <li class="nav-item">
                     <a href="/book" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-book"></i>
                         <p>
                             Book
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                 </li>
-                <li class="nav-itemn">
+                <li class="nav-item">
                     <a href="/borrower" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fa-solid fa-face-smile"></i>
                         <p>
                             Borrower
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                 </li>
-                <li class="nav-itemn">
+                <li class="nav-item">
                     <a href="/borrow" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fa-solid fa-list"></i>
                         <p>
                             Borrow
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                 </li>
-                <li class="nav-itemn">
+                <li class="nav-item">
                     <a href="/category" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fa-solid fa-hashtag"></i>
                         <p>
                             Category
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                 </li>
-                <li class="nav-itemn">
+                <li class="nav-item">
                     <a href="/publisher" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fa-solid fa-circle-user"></i>
                         <p>
                             Publisher
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                 </li>
-                <li class="nav-itemn">
+                <li class="nav-item">
+                    <a href="/staff" class="nav-link">
+                        <i class="nav-icon fa-solid fa-address-card"></i>
+                        <p>
+                            Staff
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fa-solid fa-right-from-bracket"></i>
                         <p>
                             Log out
                             <i class="right fas fa-angle-left"></i>

@@ -5,9 +5,9 @@
     <div class="row">
         <div class="col">
             <div class="table-responsive">
-                <table class="table">
+                <table class="table table-secondary table-bordered border-dark table-striped">
                     <thead>
-                        <tr class="bg-primary">
+                        <tr class="bg-dark">
                             <th scope="col">id</th>
                             <th scope="col">id_borrower</th>
                             <th scope="col">id_book</th>
@@ -18,16 +18,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($Borrow as $containt) :?>
-                        <tr>
-                            <th scope="row"><?= $containt['id'] ?></th>
-                            <td><?= $containt['id_borrower'] ?></td>
-                            <td><?= $containt['id_book'] ?></td>
-                            <td><?= $containt['id_staff'] ?></td>
-                            <td><?= $containt['release_date'] ?></td>
-                            <td><?= $containt['due_date'] ?></td>
-                            <td><?= $containt['note'] ?></td>
-                        </tr>
+                        <?php foreach ($Borrow as $containt) : ?>
+                            <tr>
+                                <th scope="row"><?= $containt['id'] ?></th>
+                                <td><?= $containt['id_borrower'] ?></td>
+                                <td><?= $containt['id_book'] ?></td>
+                                <td><?= $containt['id_staff'] ?></td>
+                                <td><?= $containt['release_date'] ?></td>
+                                <td><?= $containt['due_date'] ?></td>
+                                <td><?= $containt['note'] ?></td>
+                            </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

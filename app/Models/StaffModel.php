@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class StaffModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'staffs';
+    protected $table            = 'staff';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;

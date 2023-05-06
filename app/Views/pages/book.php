@@ -5,9 +5,9 @@
     <div class="row">
         <div class="col">
             <div class="table-responsive">
-                <table class="table">
+                <table class="table table-secondary table-bordered border-dark table-striped">
                     <thead>
-                        <tr class="bg-primary">
+                        <tr class="bg-dark">
                             <th scope="col">id</th>
                             <th scope="col">title</th>
                             <th scope="col">author</th>

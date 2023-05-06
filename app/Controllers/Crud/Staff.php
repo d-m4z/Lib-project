@@ -17,7 +17,7 @@ class Staff extends BaseController
         $Staff= $this->StaffModel->findAll();
 
         $data = [
-            'Category' => $Staff
+            'Staff' => $Staff
         ];
 
         return view('pages/staff', $data);
