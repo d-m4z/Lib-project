@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li class="nav-itemn">
-                    <a href="#" class="nav-link">
+                    <a href="/about" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             About
@@ -62,7 +62,7 @@
                     </a>
                 </li>
                 <li class="nav-itemn">
-                    <a href="#" class="nav-link">
+                    <a href="/borrower" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Borrower
@@ -71,7 +71,7 @@
                     </a>
                 </li>
                 <li class="nav-itemn">
-                    <a href="#" class="nav-link">
+                    <a href="/borrow" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Borrow
@@ -80,7 +80,7 @@
                     </a>
                 </li>
                 <li class="nav-itemn">
-                    <a href="#" class="nav-link">
+                    <a href="/category" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Category
@@ -89,7 +89,7 @@
                     </a>
                 </li>
                 <li class="nav-itemn">
-                    <a href="#" class="nav-link">
+                    <a href="/publisher" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Publisher

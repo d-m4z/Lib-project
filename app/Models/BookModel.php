@@ -17,23 +17,23 @@ class BookModel extends Model
     protected $allowedFields    = [
         'title', 'author', 'publication_year', 'quantity'
     ];
-
-    public function getCategory()
-    {
-
-        // SELECT * FROM book JOIN category ON id_category = id;
-
-        return $this->db->table('book')->join('category', 'id_category = id')->get()->getResultArray();
-    }
-
-    public function getPublisher()
-    {
-
-        // SELECT * FROM book JOIN category ON id_category = id;
-
-        return $this->db->table('book')->join('publisher', 'id_publisher = id')->get()->getResultArray();
-    }
-
+    
     // Dates
     protected $useTimestamps = false;
+    
+    public function getCategory()
+    {
+        
+        // SELECT * FROM book JOIN category ON id_category = id;
+        
+        return $this->db->table('book')->join('category', 'id_category = id')->get()->getResultArray();
+    }
+    
+    public function getPublisher()
+    {
+        
+        // SELECT * FROM book JOIN category ON id_category = id;
+        
+        return $this->db->table('book')->join('publisher', 'id_publisher = id')->get()->getResultArray();
+    }
 }

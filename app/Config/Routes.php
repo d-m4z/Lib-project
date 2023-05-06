@@ -29,8 +29,14 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->get('/book', 'Home::book');
+$routes->get('/', 'MainController::index');
+$routes->get('/about', 'MainController::about');
+$routes->get('/book', 'Crud\Book::book');
+$routes->get('/borrow', 'Crud\Borrow::borrow');
+$routes->get('/borrower', 'Crud\Borrower::borrower');
+$routes->get('/publisher', 'Crud\Publisher::publisher');
+$routes->get('/category', 'Crud\Category::category');
+$routes->get('/staff', 'Crud\Staff::staff');
 
 /*
  * --------------------------------------------------------------------

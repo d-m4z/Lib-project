@@ -7,7 +7,7 @@
             <div class="table-responsive">
                 <table class="table">
                     <thead>
-                        <tr>
+                        <tr class="bg-primary">
                             <th scope="col">id</th>
                             <th scope="col">title</th>
                             <th scope="col">author</th>
@@ -18,23 +18,17 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach($Book as $containt) :?>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <th scope="row"><?= $containt['id'] ?></th>
+                            <td><?= $containt['title'] ?></td>
+                            <td><?= $containt['author'] ?></td>
+                            <td><?= $containt['publication_year'] ?></td>
+                            <td><?= $containt['id_publisher'] ?></td>
+                            <td><?= $containt['id_category'] ?></td>
+                            <td><?= $containt['quantity'] ?></td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
