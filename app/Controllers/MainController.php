@@ -6,11 +6,19 @@ class MainController extends BaseController
 {
     public function index()
     {
-        return view('pages/home');
+        $data = [
+            'title' => 'Home | PERPUS',
+            'navText' => ''
+        ];
+        return view('pages/home', $data);
     }
 
     public function about()
     {
-        return view('pages/about');
+        $data = [
+            'title' => 'About | PERPUS',
+            'navText' => ''
+        ];
+        return view('pages/about', $data);
     }
 }

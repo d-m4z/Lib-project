@@ -17,6 +17,8 @@ class Staff extends BaseController
         $Staff= $this->StaffModel->findAll();
 
         $data = [
+            'title' => 'Staffs | PERPUS',
+            'navText' => 'Staffs Data',
             'Staff' => $Staff
         ];
 

@@ -38,6 +38,8 @@ $routes->get('/publisher', 'Crud\Publisher::publisher');
 $routes->get('/category', 'Crud\Category::category');
 $routes->get('/staff', 'Crud\Staff::staff');
 
+$routes->get('/book/create', 'Crud\Book::create');
+$routes->post('/book/save', 'Crud\Book::save');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

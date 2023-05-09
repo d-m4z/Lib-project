@@ -17,6 +17,8 @@ class Borrower extends BaseController
         $Borrower = $this->BorrowerModel->findAll();
 
         $data = [
+            'title' => 'Borrowers | PERPUS',
+            'navText' => 'Borrowers Data',
             'Borrower' => $Borrower
         ];
 

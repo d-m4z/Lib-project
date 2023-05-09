@@ -17,6 +17,8 @@ class Category extends BaseController
         $Category= $this->CategoryModel->findAll();
 
         $data = [
+            'title' => 'Categories | PERPUS',
+            'navText' => 'Categories Data',
             'Category' => $Category
         ];
 

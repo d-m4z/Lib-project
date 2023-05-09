@@ -1,7 +1,14 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
+
 <div class="container">
+    <a class="btn btn-primary" href="/book/create" role="button">Add Data</a>
+    <?php if (session()->getFlashdata('message')) : ?>
+        <div class="alert alert-default-success" role="alert">
+            <?= session()->getFlashdata('message'); ?>
+        </div>
+    <?php endif; ?>
     <div class="row">
         <div class="col">
             <div class="table-responsive">
@@ -18,16 +25,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($Book as $containt) :?>
-                        <tr>
-                            <th scope="row"><?= $containt['id'] ?></th>
-                            <td><?= $containt['title'] ?></td>
-                            <td><?= $containt['author'] ?></td>
-                            <td><?= $containt['publication_year'] ?></td>
-                            <td><?= $containt['id_publisher'] ?></td>
-                            <td><?= $containt['id_category'] ?></td>
-                            <td><?= $containt['quantity'] ?></td>
-                        </tr>
+                        <?php foreach ($Book as $containt) : ?>
+                            <tr>
+                                <th scope="row"><?= $containt['id'] ?></th>
+                                <td><?= $containt['title'] ?></td>
+                                <td><?= $containt['author'] ?></td>
+                                <td><?= $containt['publication_year'] ?></td>
+                                <td><?= $containt['id_publisher'] ?></td>
+                                <td><?= $containt['id_category'] ?></td>
+                                <td><?= $containt['quantity'] ?></td>
+                            </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

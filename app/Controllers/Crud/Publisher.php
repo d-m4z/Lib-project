@@ -17,6 +17,8 @@ class Publisher extends BaseController
         $Publisher= $this->PublisherModel->findAll();
 
         $data = [
+            'title' => 'Publishers | PERPUS',
+            'navText' => 'Publishers Data',
             'Publisher' => $Publisher
         ];
 
