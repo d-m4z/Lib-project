@@ -29,7 +29,6 @@ class Staff extends BaseController
     {
         $data = [
             'title' => 'Add staff Data Form',
-            'navText' => '+ staff Data'
         ];
 
         return view('pages/create/staffCreate', $data);

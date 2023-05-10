@@ -11,12 +11,6 @@
                     <a href="/about" class="nav-link">About</a>
                 </li> -->
             </ul>
-            
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <h3 class="under-accent"><?= $navText ?></h3>
-                </li>
-            </ul>
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
@@ -43,7 +37,7 @@
                 </li> -->
 
                 <li class="nav-item">
-                <button type="button" class="btn btn-primary">Log In</button>
+                <a class="btn btn-success" href="/login" role="button">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
