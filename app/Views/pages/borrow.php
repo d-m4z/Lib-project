@@ -2,6 +2,12 @@
 
 <?= $this->section('content'); ?>
 <div class="container">
+    <a class="btn btn-primary" href="/borrow/create" role="button">Add Data</a>
+    <?php if (session()->getFlashdata('message')) : ?>
+        <div class="alert alert-default-success" role="alert">
+            <?= session()->getFlashdata('message'); ?>
+        </div>
+    <?php endif; ?>
     <div class="row">
         <div class="col">
             <div class="table-responsive">

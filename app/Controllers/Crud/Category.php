@@ -24,4 +24,33 @@ class Category extends BaseController
 
         return view('pages/category', $data);
     }
+
+    public function create()
+    {
+        $data = [
+            'title' => 'Add Category Data Form',
+            'navText' => '+ Category Data'
+        ];
+
+        return view('pages/create/categoryCreate', $data);
+    }
+
+    public function save()
+    {
+
+        // validasi input
+        // if(!$this->validate([
+        //     'title' => 'required|is_unique[book.title]'
+        // ])) {
+        //     return redirect()->to(base_url().'book/create')->withInput();
+        // }
+
+        $this->CategoryModel->save([
+            'category' => $this->request->getVar('category'),
+        ]);
+
+        session()->setFlashdata('message', 'Data Have Been Added to Database.');
+
+        return redirect()->to('/category');
+    }
 }

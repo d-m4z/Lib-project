@@ -21,4 +21,9 @@ class MainController extends BaseController
         ];
         return view('pages/about', $data);
     }
+
+    public function login()
+    {
+        return view('login/login');
+    }
 }

@@ -40,6 +40,24 @@ $routes->get('/staff', 'Crud\Staff::staff');
 
 $routes->get('/book/create', 'Crud\Book::create');
 $routes->post('/book/save', 'Crud\Book::save');
+
+$routes->get('/borrow/create', 'Crud\Borrow::create');
+$routes->post('/borrow/save', 'Crud\Borrow::save');
+
+$routes->get('/borrower/create', 'Crud\Borrower::create');
+$routes->post('/borrower/save', 'Crud\Borrower::save');
+
+$routes->get('/category/create', 'Crud\Category::create');
+$routes->post('/category/save', 'Crud\Category::save');
+
+$routes->get('/publisher/create', 'Crud\Publisher::create');
+$routes->post('/publisher/save', 'Crud\Publisher::save');
+
+$routes->get('/staff/create', 'Crud\Staff::create');
+$routes->post('/staff/save', 'Crud\Staff::save');
+
+// LOGIN
+$routes->get('/login', 'MainController::login');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

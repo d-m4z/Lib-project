@@ -33,7 +33,7 @@ class Book extends BaseController
             'navText' => '+ Books Data'
         ];
 
-        return view('pages/bookCreate', $data);
+        return view('pages/create/bookCreate', $data);
     }
 
     public function save()

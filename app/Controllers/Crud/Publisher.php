@@ -24,4 +24,35 @@ class Publisher extends BaseController
 
         return view('pages/publisher', $data);
     }
+
+    public function create()
+    {
+        $data = [
+            'title' => 'Add Publisher Data Form',
+            'navText' => '+ Publisher Data'
+        ];
+
+        return view('pages/create/publisherCreate', $data);
+    }
+
+    public function save()
+    {
+
+        // validasi input
+        // if(!$this->validate([
+        //     'title' => 'required|is_unique[book.title]'
+        // ])) {
+        //     return redirect()->to(base_url().'book/create')->withInput();
+        // }
+
+        $this->PublisherModel->save([
+            'name' => $this->request->getVar('name'),
+            'address' => $this->request->getVar('address'),
+            'contact' => $this->request->getVar('contact')
+        ]);
+
+        session()->setFlashdata('message', 'Data Have Been Added to Database.');
+
+        return redirect()->to('/publisher');
+    }
 }

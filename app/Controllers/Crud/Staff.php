@@ -24,4 +24,35 @@ class Staff extends BaseController
 
         return view('pages/staff', $data);
     }
+
+    public function create()
+    {
+        $data = [
+            'title' => 'Add staff Data Form',
+            'navText' => '+ staff Data'
+        ];
+
+        return view('pages/create/staffCreate', $data);
+    }
+
+    public function save()
+    {
+
+        // validasi input
+        // if(!$this->validate([
+        //     'title' => 'required|is_unique[book.title]'
+        // ])) {
+        //     return redirect()->to(base_url().'book/create')->withInput();
+        // }
+
+        $this->StaffModel->save([
+            'name' => $this->request->getVar('name'),
+            'email' => $this->request->getVar('email'),
+            'password' => $this->request->getVar('password')
+        ]);
+
+        session()->setFlashdata('message', 'Data Have Been Added to Database.');
+
+        return redirect()->to('/staff');
+    }
 }
