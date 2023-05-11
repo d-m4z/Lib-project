@@ -40,21 +40,27 @@ $routes->get('/staff', 'Crud\Staff::staff');
 
 $routes->get('/book/create', 'Crud\Book::create');
 $routes->post('/book/save', 'Crud\Book::save');
+$routes->post('/book/delete/(:num)', 'Crud\Book::delete/$1');
 
 $routes->get('/borrow/create', 'Crud\Borrow::create');
 $routes->post('/borrow/save', 'Crud\Borrow::save');
+$routes->post('/borrow/delete/(:num)', 'Crud\Borrow::delete/$1');
 
 $routes->get('/borrower/create', 'Crud\Borrower::create');
 $routes->post('/borrower/save', 'Crud\Borrower::save');
+$routes->post('/borrower/delete/(:num)', 'Crud\Borrower::delete/$1');
 
 $routes->get('/category/create', 'Crud\Category::create');
 $routes->post('/category/save', 'Crud\Category::save');
+$routes->post('/category/delete/(:num)', 'Crud\Category::delete/$1');
 
 $routes->get('/publisher/create', 'Crud\Publisher::create');
 $routes->post('/publisher/save', 'Crud\Publisher::save');
+$routes->post('/publisher/delete/(:num)', 'Crud\Publisher::delete/$1');
 
 $routes->get('/staff/create', 'Crud\Staff::create');
 $routes->post('/staff/save', 'Crud\Staff::save');
+$routes->post('/staff/delete/(:num)', 'Crud\Staff::delete/$1');
 
 // LOGIN
 $routes->get('/login', 'MainController::login');

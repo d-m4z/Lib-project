@@ -47,11 +47,18 @@ class Staff extends BaseController
         $this->StaffModel->save([
             'name' => $this->request->getVar('name'),
             'email' => $this->request->getVar('email'),
-            'password' => $this->request->getVar('password')
+            'password' => md5($this->request->getVar('password'))
         ]);
 
-        session()->setFlashdata('message', 'Data Have Been Added to Database.');
+        session()->setFlashdata('message', 'Data Have Added to Database.');
 
+        return redirect()->to('/staff');
+    }
+
+    public function delete($id)
+    {
+        $this->StaffModel->delete($id);
+        session()->setFlashdata('message1', 'Data Have Deleted from Database.');
         return redirect()->to('/staff');
     }
 }

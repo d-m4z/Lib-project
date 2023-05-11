@@ -36,19 +36,19 @@
                         <div class="row mb-3">
                             <label for="id_publisher" class="col-sm-2 col-form-label">Id_publisher</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="id_publisher" name="id_publisher">
+                                <input type="number" class="form-control" id="id_publisher" name="id_publisher">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="id_category" class="col-sm-2 col-form-label">Id_category</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="id_category" name="id_category">
+                                <input type="number" class="form-control" id="id_category" name="id_category">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="quantity" class="col-sm-2 col-form-label">Quantity</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="quantity" name="quantity">
+                                <input type="number" class="form-control" id="quantity" name="quantity">
                             </div>
                         </div>
 

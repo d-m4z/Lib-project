@@ -55,8 +55,15 @@ class Book extends BaseController
             'quantity' => $this->request->getVar('quantity')
         ]);
 
-        session()->setFlashdata('message', 'Data Have Been Added to Database.');
+        session()->setFlashdata('message', 'Data Have Added to Database.');
 
+        return redirect()->to('/book');
+    }
+
+    public function delete($id)
+    {
+        $this->BookModel->delete($id);
+        session()->setFlashdata('message1', 'Data Have Deleted from Database.');
         return redirect()->to('/book');
     }
 }

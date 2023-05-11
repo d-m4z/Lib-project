@@ -14,20 +14,23 @@
                         <div class="row mb-3">
                             <label for="id_borrower" class="col-sm-2 col-form-label">Id_borrower</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="id_borrower" name="id_borrower" autofocus>
+                                <input type="number" class="form-control <?= (validation_show_error('id_borrower')) ? 'is-invalid' : ''; ?>" id="id_borrower" name="id_borrower" autofocus>
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('id_borrower'); ?>
+                                </div>
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <label for="id_book" class="col-sm-2 col-form-label">Id_book</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="id_book" name="id_book">
+                                <input type="number" class="form-control" id="id_book" name="id_book">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="id_staff" class="col-sm-2 col-form-label">Id_staff</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="id_staff" name="id_staff">
+                                <input type="number" class="form-control" id="id_staff" name="id_staff">
                             </div>
                         </div>
                         <div class="row mb-3">

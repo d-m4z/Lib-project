@@ -54,8 +54,15 @@ class Borrower extends BaseController
             'email' => $this->request->getVar('email')
         ]);
 
-        session()->setFlashdata('message', 'Data Have Been Added to Database.');
+        session()->setFlashdata('message', 'Data Have Added to Database.');
 
+        return redirect()->to('/borrower');
+    }
+
+    public function delete($id)
+    {
+        $this->BorrowerModel->delete($id);
+        session()->setFlashdata('message1', 'Data Have Deleted from Database.');
         return redirect()->to('/borrower');
     }
 }

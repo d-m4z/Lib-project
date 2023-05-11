@@ -49,8 +49,15 @@ class Category extends BaseController
             'category' => $this->request->getVar('category'),
         ]);
 
-        session()->setFlashdata('message', 'Data Have Been Added to Database.');
+        session()->setFlashdata('message', 'Data Have Added to Database.');
 
+        return redirect()->to('/category');
+    }
+
+    public function delete($id)
+    {
+        $this->CategoryModel->delete($id);
+        session()->setFlashdata('message1', 'Data Have Deleted from Database.');
         return redirect()->to('/category');
     }
 }

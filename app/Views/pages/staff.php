@@ -11,8 +11,13 @@
                         <a class="btn-sm btn-primary d-flex align-content-end" href="/staff/create" role="button">Add Data</a>
                     </div>
                     <?php if (session()->getFlashdata('message')) : ?>
-                        <div class="alert alert-default-success" role="alert">
+                        <div class="alert alert-default-success alert-dismissible fade show" role="alert">
                             <?= session()->getFlashdata('message'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (session()->getFlashdata('message1')) : ?>
+                        <div class="alert alert-default-danger alert-dismissible fade show" role="alert">
+                            <?= session()->getFlashdata('message1'); ?>
                         </div>
                     <?php endif; ?>
 
@@ -24,6 +29,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Password</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -33,6 +39,13 @@
                                         <td><?= $containt['name'] ?></td>
                                         <td><?= $containt['email'] ?></td>
                                         <td><?= $containt['password'] ?></td>
+                                        <td>
+                                            <a href="" class="btn btn-sm btn-warning">Edit</a>|
+                                            <form class="d-inline" action="/staff/delete/<?= $containt['id']; ?>" method="POST">
+                                                <?= csrf_field() ?>
+                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

@@ -11,8 +11,13 @@
                         <a class="btn-sm btn-primary" href="/borrow/create" role="button">Add Data</a>
                     </div>
                     <?php if (session()->getFlashdata('message')) : ?>
-                        <div class="alert alert-default-success" role="alert">
+                        <div class="alert alert-default-success alert-dismissible" role="alert">
                             <?= session()->getFlashdata('message'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (session()->getFlashdata('message1')) : ?>
+                        <div class="alert alert-default-danger alert-dismissible" role="alert">
+                            <?= session()->getFlashdata('message1'); ?>
                         </div>
                     <?php endif; ?>
 
@@ -27,6 +32,7 @@
                                     <th>Release_date</th>
                                     <th>Due_date</th>
                                     <th>Note</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,6 +45,12 @@
                                         <td><?= $containt['release_date'] ?></td>
                                         <td><?= $containt['due_date'] ?></td>
                                         <td><?= $containt['note'] ?></td>
+                                        <td><a href="" class="btn btn-sm btn-warning">Edit</a>|
+                                            <form class="d-inline" action="/borrow/delete/<?= $containt['id']; ?>" method="POST">
+                                            <?= csrf_field() ?>
+                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

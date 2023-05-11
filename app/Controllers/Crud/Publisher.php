@@ -51,8 +51,14 @@ class Publisher extends BaseController
             'contact' => $this->request->getVar('contact')
         ]);
 
-        session()->setFlashdata('message', 'Data Have Been Added to Database.');
+        session()->setFlashdata('message', 'Data Have Added to Database.');
 
+        return redirect()->to('/publisher');
+    }
+    public function delete($id)
+    {
+        $this->PublisherModel->delete($id);
+        session()->setFlashdata('message1', 'Data Have Deleted from Database.');
         return redirect()->to('/publisher');
     }
 }
