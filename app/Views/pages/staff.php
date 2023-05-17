@@ -27,10 +27,9 @@
                     <?php endif; ?>
 
                     <div class="card-body">
-                        <table class="table table-bordered table-responsive-lg">
+                        <table class="table table-striped table-responsive-lg">
                             <thead class="bg-dark">
                                 <tr>
-                                    <th style="width: 20px">Id</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Password</th>
@@ -40,7 +39,6 @@
                             <tbody>
                                 <?php foreach ($Staff as $containt) : ?>
                                     <tr>
-                                        <td><?= $containt['id'] ?></td>
                                         <td><?= $containt['name'] ?></td>
                                         <td><?= $containt['email'] ?></td>
                                         <td><?= $containt['password'] ?></td>

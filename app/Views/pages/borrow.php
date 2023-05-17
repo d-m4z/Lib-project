@@ -27,10 +27,9 @@
                     <?php endif; ?>
 
                     <div class="card-body">
-                        <table class="table table-bordered table-responsive-lg">
+                        <table class="table table-striped table-responsive-lg">
                             <thead class="bg-dark">
                                 <tr>
-                                    <th style="width: 20px">Id</th>
                                     <th>Id_borrower</th>
                                     <th>Id_book</th>
                                     <th>Id_staff</th>
@@ -43,7 +42,6 @@
                             <tbody>
                                 <?php foreach ($Borrow as $containt) : ?>
                                     <tr>
-                                        <td><?= $containt['id'] ?></td>
                                         <td><?= $containt['client'] ?></td>
                                         <td><?= $containt['title'] ?></td>
                                         <td><?= $containt['name'] ?></td>

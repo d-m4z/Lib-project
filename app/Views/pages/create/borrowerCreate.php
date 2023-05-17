@@ -15,7 +15,10 @@
                         <div class="row mb-3">
                             <label for="name" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="name" name="name" autofocus>
+                                <input type="text" class="form-control <?= (validation_show_error('name')) ? 'is-invalid' : ''; ?>" id="name" name="name" autofocus>
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('name'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -33,19 +36,28 @@
                         <div class="row mb-3">
                             <label for="gender" class="col-sm-2 col-form-label">Gender</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="gender" name="gender">
+                                <input type="text" class="form-control <?= (validation_show_error('gender')) ? 'is-invalid' : ''; ?>" id="gender" name="gender">
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('gender'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="contact" class="col-sm-2 col-form-label">Contact</label>
                             <div class="col-sm-10">
-                                <input type="tel" class="form-control" id="contact" name="contact" pattern="[0-9]{13}">
+                                <input type="tel" class="form-control <?= (validation_show_error('contact')) ? 'is-invalid' : ''; ?>" id="contact" name="contact" pattern="[0-9]{13}">
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('contact'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="email" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email" name="email">
+                                <input type="email" class="form-control <?= (validation_show_error('email')) ? 'is-invalid' : ''; ?>" id="email" name="email">
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('email'); ?>
+                                </div>
                             </div>
                         </div>
 

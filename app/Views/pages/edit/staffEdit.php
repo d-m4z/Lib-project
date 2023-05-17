@@ -15,20 +15,29 @@
                         <div class="row mb-3">
                             <label for="name" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="name" name="name" autofocus value="<?= !$staff['name'] ? old('name') : $staff['name'] ?>">
+                                <input type="text" class="form-control <?= (validation_show_error('name')) ? 'is-invalid' : ''; ?>" id="name" name="name" autofocus value="<?= !$staff['name'] ? old('name') : $staff['name'] ?>">
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('name'); ?>
+                                </div>
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <label for="email" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email" name="email" value="<?= !$staff['email'] ? old('email') : $staff['email'] ?>">
+                                <input type="email" class="form-control <?= (validation_show_error('email')) ? 'is-invalid' : ''; ?>" id="email" name="email" value="<?= !$staff['email'] ? old('email') : $staff['email'] ?>">
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('email'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="password" class="col-sm-2 col-form-label">Password</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="password" name="password" value="<?= !$staff['password'] ? old('password') : $staff['password'] ?>">
+                                <input type="password" class="form-control <?= (validation_show_error('password')) ? 'is-invalid' : ''; ?>" id="password" name="password" value="<?= !$staff['password'] ? old('password') : $staff['password'] ?>">
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('password'); ?>
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">submit</button>

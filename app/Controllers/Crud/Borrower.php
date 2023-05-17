@@ -94,7 +94,7 @@ class Borrower extends BaseController
             'name' => 'required',
             'gender' => 'required',
             'contact' => 'required',
-            'email' => 'required|is_unique[borrower.email]'
+            'email' => 'required'
         ])) {
             return redirect()->to(base_url() . 'borrower/edit/' . $post['id'])->withInput();
         }

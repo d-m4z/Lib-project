@@ -26,6 +26,11 @@
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
+                <?php if (session()->getFlashdata('error')) : ?>
+                        <div class="alert alert-default-warning alert-dismissible" role="alert">
+                            <?= session()->getFlashdata('error'); ?>
+                        </div>
+                    <?php endif; ?>
                 <form action="<?= base_url() ?>/auth" method="post">
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Email" name="email">
@@ -69,12 +74,12 @@
                     </a>
                 </div> -->
 
-                <p class="mb-1">
+                <!-- <p class="mb-1">
                     <a href="forgot-password.html">I forgot my password</a>
                 </p>
                 <p class="mb-0">
                     <a href="register.html" class="text-center">Register a new membership</a>
-                </p>
+                </p> -->
             </div>
 
         </div>

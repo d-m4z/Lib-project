@@ -88,9 +88,9 @@ class Staff extends BaseController
 
         // validasi
         if (!$this->validate([
-            'name' => 'required|is_unique[staff.name]',
-            'email' => 'required|is_unique[staff.email]',
-            'password' => 'required|is_unique[staff.password]'
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required'
         ])) {
             return redirect()->to(base_url() . 'staff/edit/' . $post['id'])->withInput();
         }

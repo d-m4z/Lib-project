@@ -89,7 +89,7 @@ class Category extends BaseController
 
         // validasi
         if (!$this->validate([
-            'category' => 'required|is_unique[category.category]'
+            'category' => 'required'
         ])) {
             return redirect()->to(base_url() . 'category/edit/' . $post['id'])->withInput();
         }

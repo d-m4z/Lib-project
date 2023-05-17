@@ -125,6 +125,7 @@ class Borrow extends BaseController
             'id_borrower' => 'required',
             'id_book' => 'required',
             'id_staff' => 'required',
+            'release_date' => 'required',
             'due_date' => 'required'
         ])) {
             return redirect()->to(base_url() . 'borrow/edit/' . $post['id'])->withInput();

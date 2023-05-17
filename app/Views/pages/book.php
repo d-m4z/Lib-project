@@ -27,10 +27,9 @@
                     <?php endif; ?>
 
                     <div class="card-body">
-                        <table class="table table-responsive-lg">
+                        <table class="table table-striped table-responsive-lg">
                             <thead class="bg-dark">
                                 <tr>
-                                    <th style="width: 20px">Id</th>
                                     <th>Title</th>
                                     <th>Author</th>
                                     <th>Publication_year</th>
@@ -43,7 +42,6 @@
                             <tbody>
                                 <?php foreach ($Book as $containt) : ?>
                                     <tr>
-                                        <td><?= $containt['id'] ?></td>
                                         <td><?= $containt['title'] ?></td>
                                         <td><?= $containt['author'] ?></td>
                                         <td><?= $containt['publication_year'] ?></td>

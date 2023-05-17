@@ -27,10 +27,9 @@
                     <?php endif; ?>
 
                     <div class="card-body">
-                        <table class="table table-bordered table-responsive-lg">
+                        <table class="table table-striped table-responsive-lg">
                             <thead class="bg-dark">
                                 <tr>
-                                    <th style="width: 20px">Id</th>
                                     <th>Category</th>
                                     <th>Action</th>
                                 </tr>
@@ -38,7 +37,6 @@
                             <tbody>
                                 <?php foreach ($Category as $containt) : ?>
                                     <tr>
-                                        <td><?= $containt['id'] ?></td>
                                         <td><?= $containt['category'] ?></td>
                                         <td>
                                             <a href="/category/edit/<?= $containt['id']; ?>" class="btn btn-sm btn-warning">Edit</a>

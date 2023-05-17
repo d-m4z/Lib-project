@@ -88,7 +88,7 @@ class Publisher extends BaseController
 
         // validasi
         if (!$this->validate([
-            'name' => 'required|is_unique[publisher.name]'
+            'name' => 'required'
         ])) {
             return redirect()->to(base_url() . 'publisher/edit/' . $post['id'])->withInput();
         }

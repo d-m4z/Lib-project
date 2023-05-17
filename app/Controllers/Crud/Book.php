@@ -111,12 +111,11 @@ class Book extends BaseController
 
     public function editPro()
     {
-        // $book = $this->BookModel->findAll();
         $post = $this->request->getPost();
 
         // validasi
         if (!$this->validate([
-            'title' => 'required|is_unique[book.title]',
+            'title' => 'required',
             'author' => 'required',
             'publication_year' => 'required'
         ])){

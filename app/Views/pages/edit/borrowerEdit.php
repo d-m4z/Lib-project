@@ -15,37 +15,52 @@
                         <div class="row mb-3">
                             <label for="name" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="name" name="name" autofocus value="<?= !$borrower['name']?old('name'):$borrower['name'] ?>">
+                                <input type="text" class="form-control <?= (validation_show_error('name')) ? 'is-invalid' : ''; ?>" id="name" name="name" autofocus value="<?= !$borrower['name']?old('name'):$borrower['name'] ?>">
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('name'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="birthdate" class="col-sm-2 col-form-label">Birthdate</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="birthdate" name="birthdate" value="<?= !$borrower['date']?old('date'):$borrower['date'] ?>">
+                                <input type="date" class="form-control" id="birthdate" name="birthdate" value="<?= !$borrower['birthdate']?old('birthdate'):$borrower['birthdate'] ?>">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="address" class="col-sm-2 col-form-label">Address</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="address" name="address" value="<?= !$borrower['address']?old('address'):$borrower['address'] ?>">
+                                <input type="text" class="form-control <?= (validation_show_error('address')) ? 'is-invalid' : ''; ?>" id="address" name="address" value="<?= !$borrower['address']?old('address'):$borrower['address'] ?>">
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('address'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="gender" class="col-sm-2 col-form-label">Gender</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="gender" name="gender" value="<?= !$borrower['gender']?old('gender'):$borrower['gender'] ?>">
+                                <input type="text" class="form-control <?= (validation_show_error('gender')) ? 'is-invalid' : ''; ?>" id="gender" name="gender" value="<?= !$borrower['gender']?old('gender'):$borrower['gender'] ?>">
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('gender'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="contact" class="col-sm-2 col-form-label">Contact</label>
                             <div class="col-sm-10">
-                                <input type="tel" class="form-control" id="contact" name="contact" pattern="[0-9]{13}" value="<?= !$borrower['contact']?old('contact'):$borrower['contact'] ?>">
+                                <input type="tel" class="form-control <?= (validation_show_error('contact')) ? 'is-invalid' : ''; ?>" id="contact" name="contact" pattern="[0-9]{13}" value="<?= !$borrower['contact']?old('contact'):$borrower['contact'] ?>">
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('contact'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="email" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email" name="email" value="<?= !$borrower['email']?old('email'):$borrower['email'] ?>">
+                                <input type="email" class="form-control <?= (validation_show_error('email')) ? 'is-invalid' : ''; ?>" id="email" name="email" value="<?= !$borrower['email']?old('email'):$borrower['email'] ?>">
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('email'); ?>
+                                </div>
                             </div>
                         </div>
 

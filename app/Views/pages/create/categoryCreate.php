@@ -14,7 +14,10 @@
                         <div class="row mb-3">
                             <label for="category" class="col-sm-2 col-form-label">Category</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="category" name="category" autofocus>
+                                <input type="text" class="form-control <?= (validation_show_error('category')) ? 'is-invalid' : ''; ?>" id="category" name="category" autofocus>
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('category'); ?>
+                                </div>
                             </div>
                         </div>
 

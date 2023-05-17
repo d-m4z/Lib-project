@@ -45,13 +45,19 @@
                         <div class="row mb-3">
                             <label for="release_date" class="col-sm-2 col-form-label">Release_date</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="release_date" name="release_date">
+                                <input type="date" class="form-control <?= (validation_show_error('release_date')) ? 'is-invalid' : ''; ?>" id="release_date" name="release_date">
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('release_date'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="due_date" class="col-sm-2 col-form-label">Due_date</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="due_date" name="due_date">
+                                <input type="date" class="form-control <?= (validation_show_error('due_date')) ? 'is-invalid' : ''; ?>" id="due_date" name="due_date">
+                                <div class="invalid-feedback">
+                                    <?= validation_show_error('due_date'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-3">
