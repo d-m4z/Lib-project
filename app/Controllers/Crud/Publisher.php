@@ -8,6 +8,8 @@ use App\Models\PublisherModel;
 class Publisher extends BaseController
 {
     protected $PublisherModel;
+    protected $helpers = ['form'];
+
     public function __construct(){
         $this->PublisherModel= new PublisherModel();
     }
@@ -48,11 +50,11 @@ class Publisher extends BaseController
     {
 
         // validasi input
-        // if(!$this->validate([
-        //     'title' => 'required|is_unique[book.title]'
-        // ])) {
-        //     return redirect()->to(base_url().'book/create')->withInput();
-        // }
+        if(!$this->validate([
+            'name' => 'required'
+        ])) {
+            return redirect()->to(base_url().'book/create')->withInput();
+        }
 
         $this->PublisherModel->save([
             'name' => $this->request->getVar('name'),

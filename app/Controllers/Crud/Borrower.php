@@ -8,6 +8,8 @@ use App\Models\BorrowerModel;
 class Borrower extends BaseController
 {
     protected $BorrowerModel;
+    protected $helpers = ['form'];
+
     public function __construct(){
         $this->BorrowerModel = new BorrowerModel();
     }

@@ -9,6 +9,7 @@ class Category extends BaseController
 {
     protected $CategoryModel;
     protected $helpers = ['form'];
+    
     public function __construct()
     {
         $this->CategoryModel = new CategoryModel();

@@ -8,6 +8,8 @@ use App\Models\StaffModel;
 class Staff extends BaseController
 {
     protected $StaffModel;
+    protected $helpers = ['form'];
+
     public function __construct()
     {
         $this->StaffModel = new StaffModel();
@@ -57,7 +59,7 @@ class Staff extends BaseController
         $this->StaffModel->save([
             'name' => $this->request->getVar('name'),
             'email' => $this->request->getVar('email'),
-            'password' => md5($this->request->getVar('password'))
+            'password' => md5(md5($this->request->getVar('password')))
         ]);
 
         session()->setFlashdata('message', 'Data Have Added to Database.');

@@ -27,7 +27,7 @@
                     <?php endif; ?>
 
                     <div class="card-body">
-                        <table class="table table-striped table-responsive-lg">
+                        <table id="example2" class="table table-striped table-responsive-lg table-hover">
                             <thead class="bg-dark">
                                 <tr>
                                     <th>Title</th>
@@ -61,7 +61,6 @@
                         </table>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
