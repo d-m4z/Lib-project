@@ -8,9 +8,10 @@
                 <div class="card-header">
                     <h3 class="card-title">Borrow Form</h3>
                 </div>
-                <form class="form-horizontal" action="/borrow/save" method="post">
+                <form class="form-horizontal" action="/borrow/edit" method="post">
                     <?= csrf_field(); ?>
                     <div class="card-body">
+                    <input hidden type="text" name="id" value="<?= $borrow['id'] ?>">
                         <div class="row mb-3">
                             <label for="id_borrower" class="col-sm-2 col-form-label">Id_borrower</label>
                             <div class="col-sm-10">
@@ -45,24 +46,24 @@
                         <div class="row mb-3">
                             <label for="release_date" class="col-sm-2 col-form-label">Release_date</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="release_date" name="release_date">
+                                <input type="date" class="form-control" id="release_date" name="release_date" value="<?= !$borrow['release_date']?old('release_date'):$borrow['release_date'] ?>">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="due_date" class="col-sm-2 col-form-label">Due_date</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="due_date" name="due_date">
+                                <input type="date" class="form-control" id="due_date" name="due_date" value="<?= !$borrow['due_date']?old('due_date'):$borrow['release_date'] ?>">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="note" class="col-sm-2 col-form-label">Note</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="note" name="note">
+                                <input type="text" class="form-control" id="note" name="note" value="<?= !$borrow['note']?old('note'):$borrow['note'] ?>">
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">submit</button>
                     </div>
+                    <button type="submit" class="btn btn-primary">submit</button>
                 </form>
             </div>
         </div>

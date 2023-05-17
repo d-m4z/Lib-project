@@ -19,5 +19,5 @@ class PublisherModel extends Model
     ];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
 }

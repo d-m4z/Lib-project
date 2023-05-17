@@ -6,5 +6,6 @@
             <!-- Default to the left
             <div>
                 <strong>Copyright &copy; <?= date('Y'); ?> <a href="https://adminlte.io">adminLTE</a>.</strong> All rights reserved.
+                Free SVG Background by <a target="_blank" href="https://bgjar.com">BGJar</a>
             </div> -->
         <!-- </footer> -->

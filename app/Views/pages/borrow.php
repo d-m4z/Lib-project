@@ -20,6 +20,11 @@
                             <?= session()->getFlashdata('message1'); ?>
                         </div>
                     <?php endif; ?>
+                    <?php if (session()->getFlashdata('msg-edit')) : ?>
+                        <div class="alert alert-default-success alert-dismissible" role="alert">
+                            <?= session()->getFlashdata('msg-edit'); ?>
+                        </div>
+                    <?php endif; ?>
 
                     <div class="card-body">
                         <table class="table table-bordered table-responsive-lg">
@@ -39,15 +44,16 @@
                                 <?php foreach ($Borrow as $containt) : ?>
                                     <tr>
                                         <td><?= $containt['id'] ?></td>
-                                        <td><?= $containt['id_borrower'] ?></td>
-                                        <td><?= $containt['id_book'] ?></td>
-                                        <td><?= $containt['id_staff'] ?></td>
+                                        <td><?= $containt['client'] ?></td>
+                                        <td><?= $containt['title'] ?></td>
+                                        <td><?= $containt['name'] ?></td>
                                         <td><?= $containt['release_date'] ?></td>
                                         <td><?= $containt['due_date'] ?></td>
                                         <td><?= $containt['note'] ?></td>
-                                        <td><a href="" class="btn btn-sm btn-warning">Edit</a>|
+                                        <td>
+                                            <a href="/borrow/edit/<?= $containt['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
                                             <form class="d-inline" action="/borrow/delete/<?= $containt['id']; ?>" method="POST">
-                                            <?= csrf_field() ?>
+                                                <?= csrf_field() ?>
                                                 <button class="btn btn-sm btn-danger">Delete</button>
                                             </form>
                                         </td>

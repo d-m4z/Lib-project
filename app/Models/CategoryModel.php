@@ -19,5 +19,5 @@ class CategoryModel extends Model
     ];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
 }

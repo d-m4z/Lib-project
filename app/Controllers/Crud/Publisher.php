@@ -16,6 +16,10 @@ class Publisher extends BaseController
     {
         $Publisher= $this->PublisherModel->findAll();
 
+        if (!session('email')) {
+            return redirect()->to(base_url('login'));
+        }
+
         $data = [
             'title' => 'Publishers | PERPUS',
             'navText' => 'Publishers Data',
@@ -27,6 +31,11 @@ class Publisher extends BaseController
 
     public function create()
     {
+
+        if (!session('email')) {
+            return redirect()->to(base_url('login'));
+        }
+
         $data = [
             'title' => 'Add Publisher Data Form',
             'navText' => '+ Publisher Data'
@@ -53,12 +62,45 @@ class Publisher extends BaseController
 
         session()->setFlashdata('message', 'Data Have Added to Database.');
 
-        return redirect()->to('/publisher');
+        return redirect()->to(base_url().'publisher');
     }
+
     public function delete($id)
     {
         $this->PublisherModel->delete($id);
         session()->setFlashdata('message1', 'Data Have Deleted from Database.');
-        return redirect()->to('/publisher');
+        return redirect()->to(base_url().'publisher');
+    }
+
+    public function edit($id)
+    {
+        $publisher = $this->PublisherModel->where(['id' => $id])->first();
+        $data = [
+            'title' => 'Form Edit Publisher',
+            'publisher' => $publisher
+        ];
+        return view('/pages/edit/publisherEdit', $data);
+    }
+
+    public function editPro()
+    {
+        $post = $this->request->getPost();
+
+        // validasi
+        if (!$this->validate([
+            'name' => 'required|is_unique[publisher.name]'
+        ])) {
+            return redirect()->to(base_url() . 'publisher/edit/' . $post['id'])->withInput();
+        }
+
+        $this->PublisherModel->save([
+            'id' => $post['id'],
+            'name' => $post['name'],
+            'address' => $post['address'],
+            'contact' => $post['contact']
+        ]);
+
+        session()->setFlashdata('msg-edit', 'Data Have Updated from Database.');
+        return redirect()->to(base_url() . 'publisher');
     }
 }

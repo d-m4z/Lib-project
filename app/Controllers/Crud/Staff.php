@@ -8,13 +8,18 @@ use App\Models\StaffModel;
 class Staff extends BaseController
 {
     protected $StaffModel;
-    public function __construct(){
-        $this->StaffModel= new StaffModel();
+    public function __construct()
+    {
+        $this->StaffModel = new StaffModel();
     }
-    
+
     public function staff()
     {
-        $Staff= $this->StaffModel->findAll();
+        $Staff = $this->StaffModel->findAll();
+
+        if (!session('email')) {
+            return redirect()->to(base_url('login'));
+        }
 
         $data = [
             'title' => 'Staffs | PERPUS',
@@ -27,6 +32,11 @@ class Staff extends BaseController
 
     public function create()
     {
+
+        if (!session('email')) {
+            return redirect()->to(base_url('login'));
+        }
+
         $data = [
             'title' => 'Add staff Data Form',
         ];
@@ -52,13 +62,47 @@ class Staff extends BaseController
 
         session()->setFlashdata('message', 'Data Have Added to Database.');
 
-        return redirect()->to('/staff');
+        return redirect()->to(base_url() . 'staff');
     }
 
     public function delete($id)
     {
         $this->StaffModel->delete($id);
         session()->setFlashdata('message1', 'Data Have Deleted from Database.');
-        return redirect()->to('/staff');
+        return redirect()->to(base_url() . 'staff');
+    }
+
+    public function edit($id)
+    {
+        $staff = $this->StaffModel->where(['id' => $id])->first();
+        $data = [
+            'title' => 'Form Edit Staff',
+            'staff' => $staff
+        ];
+        return view('/pages/edit/staffEdit', $data);
+    }
+
+    public function editPro()
+    {
+        $post = $this->request->getPost();
+
+        // validasi
+        if (!$this->validate([
+            'name' => 'required|is_unique[staff.name]',
+            'email' => 'required|is_unique[staff.email]',
+            'password' => 'required|is_unique[staff.password]'
+        ])) {
+            return redirect()->to(base_url() . 'staff/edit/' . $post['id'])->withInput();
+        }
+
+        $this->StaffModel->save([
+            'id' => $post['id'],
+            'name' => $post['name'],
+            'email' => $post['email'],
+            'password' => $post['password']
+        ]);
+
+        session()->setFlashdata('msg-edit', 'Data Have Updated from Database.');
+        return redirect()->to(base_url() . 'staff');
     }
 }

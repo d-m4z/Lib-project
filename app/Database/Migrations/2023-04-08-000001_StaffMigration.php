@@ -5,6 +5,8 @@ namespace App\Database\Migrations;
 use CodeIgniter\Database\Migration;
 use PHPUnit\Framework\Constraint\Constraint;
 
+use function PHPSTORM_META\type;
+
 class StaffMigration extends Migration
 {
     public function up()
@@ -30,6 +32,15 @@ class StaffMigration extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 255,
                 'null' => false
+            ],
+            'created_at' => [
+                'type' => 'date'
+            ],
+            'updated_at' => [
+                'type' => 'date'
+            ],
+            'deleted_at' => [
+                'type' => 'date'
             ]
         ]);
         $this->forge->addKey('id', true, true);

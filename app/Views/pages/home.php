@@ -1,11 +1,17 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col">
-            <h1>Home</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, animi. Autem harum vero accusamus fugit itaque laboriosam ad beatae maiores quisquam debitis recusandae, eveniet quae velit, optio deserunt tempora sequi voluptatum ea, quos quibusdam illo nihil? Est dolores repellat nostrum quidem placeat tempore, totam, asperiores maxime, dignissimos debitis tempora nisi!</p>
+            <div class="card">
+                <div class="card-header d-flex justify-content-center align-items-center bg-dark">
+                    <h4>Home</h4>
+                </div>
+                <div class="card-body">
+                    <p>Ini adalah "LibProject." sebuah website yang mengelola administrasi peminjaman buku, silahkan <strong>login</strong> jika anda ingin melakukan pengelolaan data.</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

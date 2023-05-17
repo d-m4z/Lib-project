@@ -42,6 +42,15 @@ class BorrowerMigration extends Migration
             'email' => [
                 'type' => 'VARCHAR',
                 'constraint' => 50
+            ],
+            'created_at' => [
+                'type' => 'date'
+            ],
+            'updated_at' => [
+                'type' => 'date'
+            ],
+            'deleted_at' => [
+                'type' => 'date'
             ]
         ]);
         $this->forge->addKey('id', true, true);

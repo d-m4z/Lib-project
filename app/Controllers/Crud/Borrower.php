@@ -16,6 +16,10 @@ class Borrower extends BaseController
     {
         $Borrower = $this->BorrowerModel->findAll();
 
+        if (!session('email')) {
+            return redirect()->to(base_url('login'));
+        }
+
         $data = [
             'title' => 'Borrowers | PERPUS',
             'navText' => 'Borrowers Data',
@@ -27,6 +31,11 @@ class Borrower extends BaseController
 
     public function create()
     {
+
+        if (!session('email')) {
+            return redirect()->to(base_url('login'));
+        }
+
         $data = [
             'title' => 'Add Borrower Data Form',
             'navText' => '+ Borrower Data'
@@ -56,13 +65,51 @@ class Borrower extends BaseController
 
         session()->setFlashdata('message', 'Data Have Added to Database.');
 
-        return redirect()->to('/borrower');
+        return redirect()->to(base_url().'borrower');
     }
 
     public function delete($id)
     {
         $this->BorrowerModel->delete($id);
         session()->setFlashdata('message1', 'Data Have Deleted from Database.');
-        return redirect()->to('/borrower');
+        return redirect()->to(base_url().'borrower');
+    }
+
+    public function edit($id)
+    {
+        $borrower = $this->BorrowerModel->where(['id' => $id])->first();
+        $data = [
+            'title' => 'Form Edit Borrower',
+            'borrower' => $borrower
+        ];
+        return view('/pages/edit/borrowerEdit', $data);
+    }
+
+    public function editPro()
+    {
+        $post = $this->request->getPost();
+
+        // validasi
+        if (!$this->validate([
+            'name' => 'required',
+            'gender' => 'required',
+            'contact' => 'required',
+            'email' => 'required|is_unique[borrower.email]'
+        ])) {
+            return redirect()->to(base_url() . 'borrower/edit/' . $post['id'])->withInput();
+        }
+
+        $this->BorrowerModel->save([
+            'id' => $post['id'],
+            'name' => $post['name'],
+            'birthdate' => $post['birthdate'],
+            'address' => $post['address'],
+            'gender' => $post['gender'],
+            'contact' => $post['contact'],
+            'email' => $post['email']
+        ]);
+
+        session()->setFlashdata('msg-edit', 'Data Have Updated from Database.');
+        return redirect()->to(base_url() . 'borrower');
     }
 }

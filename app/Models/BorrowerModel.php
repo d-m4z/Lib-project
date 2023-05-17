@@ -18,5 +18,5 @@ class BorrowerModel extends Model
         'name', 'birthdate', 'address', 'gender', 'contact', 'email'];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
 }

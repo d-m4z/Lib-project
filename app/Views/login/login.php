@@ -17,18 +17,18 @@
     <link rel="stylesheet" href="<?= base_url() ?>/dist/css/mycss/style.css">
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page bg-body-custom">
     <div class="login-box">
-        <div class="login-logo">
-            <a href="../../index2.html"><b>Admin</b>LTE</a>
+        <div class="card-header login-logo bg-light">
+            <a href="#" class="text-primary"><b>Lib</b>Project.</a>
         </div>
 
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
-                <form action="../../index3.html" method="post">
+                <form action="<?= base_url() ?>/auth" method="post">
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" class="form-control" placeholder="Email" name="email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Password" name="password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -59,7 +59,7 @@
 
                     </div>
                 </form>
-                <div class="social-auth-links text-center mb-3">
+                <!-- <div class="social-auth-links text-center mb-3">
                     <p>- OR -</p>
                     <a href="#" class="btn btn-block btn-primary">
                         <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
@@ -67,7 +67,7 @@
                     <a href="#" class="btn btn-block btn-danger">
                         <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
                     </a>
-                </div>
+                </div> -->
 
                 <p class="mb-1">
                     <a href="forgot-password.html">I forgot my password</a>

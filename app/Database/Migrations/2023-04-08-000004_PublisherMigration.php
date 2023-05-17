@@ -27,6 +27,15 @@ class PublisherMigration extends Migration
             'contact' => [
                 'type' => 'VARCHAR',
                 'constraint' => 15
+            ],
+            'created_at' => [
+                'type' => 'date'
+            ],
+            'updated_at' => [
+                'type' => 'date'
+            ],
+            'deleted_at' => [
+                'type' => 'date'
             ]
         ]);
         $this->forge->addKey('id', true, true);

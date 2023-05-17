@@ -19,5 +19,5 @@ class StaffModel extends Model
     ];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
 }

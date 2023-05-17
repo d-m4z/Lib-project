@@ -20,6 +20,11 @@
                             <?= session()->getFlashdata('message1'); ?>
                         </div>
                     <?php endif; ?>
+                    <?php if (session()->getFlashdata('msg-edit')) : ?>
+                        <div class="alert alert-default-success alert-dismissible" role="alert">
+                            <?= session()->getFlashdata('msg-edit'); ?>
+                        </div>
+                    <?php endif; ?>
 
                     <div class="card-body">
                         <table class="table table-bordered table-responsive-lg">
@@ -35,7 +40,8 @@
                                     <tr>
                                         <td><?= $containt['id'] ?></td>
                                         <td><?= $containt['category'] ?></td>
-                                        <td><a href="" class="btn btn-sm btn-warning">Edit</a>|
+                                        <td>
+                                            <a href="/category/edit/<?= $containt['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
                                             <form class="d-inline" action="/category/delete/<?= $containt['id']; ?>" method="POST">
                                                 <?= csrf_field() ?>
                                                 <button class="btn btn-sm btn-danger">Delete</button>
