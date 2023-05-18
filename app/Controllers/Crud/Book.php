@@ -112,6 +112,7 @@ class Book extends BaseController
     public function editPro()
     {
         $post = $this->request->getPost();
+        $check = $this->BookModel->where(['id' => $post['id']])->first();
 
         // validasi
         if (!$this->validate([

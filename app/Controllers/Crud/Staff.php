@@ -24,7 +24,7 @@ class Staff extends BaseController
         }
 
         $data = [
-            'title' => 'Staffs | PERPUS',
+            'title' => 'Staffs | LibProject.',
             'navText' => 'Staffs Data',
             'Staff' => $Staff
         ];

@@ -23,7 +23,7 @@ class Borrower extends BaseController
         }
 
         $data = [
-            'title' => 'Borrowers | PERPUS',
+            'title' => 'Borrowers | LibProject.',
             'navText' => 'Borrowers Data',
             'Borrower' => $Borrower
         ];

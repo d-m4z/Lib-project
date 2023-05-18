@@ -23,7 +23,7 @@ class Publisher extends BaseController
         }
 
         $data = [
-            'title' => 'Publishers | PERPUS',
+            'title' => 'Publishers | LibProject',
             'navText' => 'Publishers Data',
             'Publisher' => $Publisher
         ];

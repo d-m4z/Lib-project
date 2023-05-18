@@ -24,7 +24,7 @@ class Category extends BaseController
         }
 
         $data = [
-            'title' => 'Categories | PERPUS',
+            'title' => 'Categories | LibProject.',
             'navText' => 'Categories Data',
             'Category' => $Category
         ];

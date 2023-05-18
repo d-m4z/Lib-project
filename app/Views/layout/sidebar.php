@@ -1,6 +1,6 @@
 <aside class="main-sidebar main-sidebar-custom sidebar-dark-light elevation-4">
     <!-- Brand Logo -->
-    <a href="\" class="brand-link d-flex align-items-center">
+    <a href="\" class="brand-link d-flex align-items-center bg-color-custom elevation-2">
         <i class="fa-solid fa-bookmark brand-image mt-1 pl-2 h4 d-flex"></i>
         <span class="brand-text">Lib<strong>Project.</strong></span>
     </a>

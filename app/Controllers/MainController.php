@@ -21,7 +21,7 @@ class MainController extends BaseController
         }
 
         $data = [
-            'title' => 'Home | PERPUS'
+            'title' => 'Home | LibProject.'
         ];
         return view('pages/home', $data);
     }
