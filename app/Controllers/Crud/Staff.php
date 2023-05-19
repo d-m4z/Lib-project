@@ -51,7 +51,7 @@ class Staff extends BaseController
 
         // validasi
         if (!$this->validate([
-            'name' => 'required',
+            'name' => 'required|is_unique[staff.name]',
             'email' => 'required',
             'password' => 'required'
         ])) {
