@@ -37,7 +37,7 @@ use CodeIgniter\Commands\Utilities\Publish;
                         <div class="row mb-3">
                             <label for="contact" class="col-sm-2 col-form-label">Contact</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control <?= (validation_show_error('contact')) ? 'is-invalid' : ''; ?>" id="contact" name="contact" value="<?= !$publisher['contact']?old('contact'):$publisher['contact'] ?>">
+                                <input type="number" class="form-control <?= (validation_show_error('contact')) ? 'is-invalid' : ''; ?>" id="contact" name="contact" value="<?= !$publisher['contact']?old('contact'):$publisher['contact'] ?>">
                                 <div class="invalid-feedback">
                                     <?= validation_show_error('contact'); ?>
                                 </div>
