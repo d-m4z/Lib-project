@@ -30,6 +30,7 @@
                         <table id="example2" class="table table-striped table-responsive-lg table-hover">
                             <thead class="bg-dark">
                                 <tr>
+                                <th style="width: 20px;">No</th>
                                     <th>Name</th>
                                     <th>Address</th>
                                     <th>Contact</th>
@@ -37,16 +38,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php $i = 1 ?>
                                 <?php foreach ($Publisher as $containt) : ?>
                                     <tr>
+                                    <td><?= $i++ ?></td>
                                         <td><?= $containt['name'] ?></td>
                                         <td><?= $containt['address'] ?></td>
                                         <td><?= $containt['contact'] ?></td>
                                         <td>
-                                            <a href="/publisher/edit/<?= $containt['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="/publisher/edit/<?= $containt['id']; ?>" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen"></i></a>
                                             <form class="d-inline" action="/publisher/delete/<?= $containt['id']; ?>" method="POST">
                                                 <?= csrf_field() ?>
-                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                                <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>

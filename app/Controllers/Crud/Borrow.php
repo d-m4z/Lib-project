@@ -26,16 +26,16 @@ class Borrow extends BaseController
 
     public function borrow()
     {
+        if (!session('email')) {
+            return redirect()->to(base_url('login'));
+        }
+
         $Borrow = $this->BorrowModel
             ->select('borrow.id as id,borrower.name as client,book.title,staff.name,borrow.release_date,borrow.due_date,borrow.note')
             ->join('borrower', 'borrow.id_borrower=borrower.id', 'left')
             ->join('book', 'borrow.id_book=book.id', 'left')
             ->join('staff', 'borrow.id_staff=staff.id', 'left')
             ->findAll();
-
-        if (!session('email')) {
-            return redirect()->to(base_url('login'));
-        }
 
         $data = [
             'title' => 'Borrows | LibProject.',
@@ -47,15 +47,13 @@ class Borrow extends BaseController
 
     public function create()
     {
+        if (!session('email')) {
+            return redirect()->to(base_url('login'));
+        }
 
         $borrower = $this->BorrowerModel->findAll();
         $book = $this->BookModel->findAll();
         $staff = $this->StaffModel->findAll();
-
-
-        if (!session('email')) {
-            return redirect()->to(base_url('login'));
-        }
 
         $data = [
             'title' => 'Add Borrow Data Form',
@@ -73,7 +71,7 @@ class Borrow extends BaseController
 
         // validasi input
         if (!$this->validate([
-            'id_borrower' => 'required|is_unique[borrow.id_borrower]'
+            'id_borrower' => 'required'
         ])) {
             return redirect()->to(base_url() . 'borrow/create')->withInput();
         }
@@ -101,6 +99,10 @@ class Borrow extends BaseController
 
     public function edit($id)
     {
+        if (!session('email')) {
+            return redirect()->to(base_url('login'));
+        }
+
         $borrow = $this->BorrowModel->where(['id' => $id])->first();
         $borrower = $this->BorrowerModel->findAll();
         $book = $this->BookModel->findall();
@@ -144,5 +146,16 @@ class Borrow extends BaseController
 
         session()->setFlashdata('msg-edit', 'Data Have Updated from Database.');
         return redirect()->to(base_url() . 'borrow');
+    }
+
+    public function return($id){
+
+        $this->BorrowModel->save([
+            'id' => $id,
+            'note' => 'Selesai'
+        ]);
+
+        session()->setFlashdata('msg-return', 'The Book Returned with Success.');
+        return redirect()->to(base_url().'borrow');
     }
 }

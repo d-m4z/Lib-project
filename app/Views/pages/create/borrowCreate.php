@@ -61,9 +61,8 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="note" class="col-sm-2 col-form-label">Note</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="note" name="note">
+                                <input hidden type="text" class="form-control" id="note" name="note" value="Meminjam">
                             </div>
                         </div>
 

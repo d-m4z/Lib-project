@@ -22,6 +22,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="<?= base_url() ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="<?= base_url() ?>/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -68,6 +70,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="<?= base_url() ?>/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="<?= base_url() ?>/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="<?= base_url() ?>/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="<?= base_url() ?>/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- PAGE PLUGINS -->
+    <!-- jQuery Mapael -->
+    <script src="<?= base_url() ?>/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+    <script src="<?= base_url() ?>/plugins/raphael/raphael.min.js"></script>
+    <script src="<?= base_url() ?>/plugins/jquery-mapael/jquery.mapael.min.js"></script>
+    <script src="<?= base_url() ?>/plugins/jquery-mapael/maps/usa_states.min.js"></script>
+    <!-- ChartJS -->
+    <script src="<?= base_url() ?>/plugins/chart.js/Chart.min.js"></script>
+
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard2.js"></script>
+
     <!-- Page specific script -->
     <script>
         $(function() {

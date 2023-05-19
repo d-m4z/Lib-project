@@ -45,7 +45,7 @@
                         <div class="row mb-3">
                             <label for="contact" class="col-sm-2 col-form-label">Contact</label>
                             <div class="col-sm-10">
-                                <input type="tel" class="form-control <?= (validation_show_error('contact')) ? 'is-invalid' : ''; ?>" id="contact" name="contact" pattern="[0-9]{13}">
+                                <input type="tel" class="form-control <?= (validation_show_error('contact')) ? 'is-invalid' : ''; ?>" id="contact" name="contact" pattern="[0-9]{11}">
                                 <div class="invalid-feedback">
                                     <?= validation_show_error('contact'); ?>
                                 </div>

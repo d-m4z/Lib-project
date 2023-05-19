@@ -17,11 +17,11 @@ class Category extends BaseController
 
     public function category()
     {
-        $Category = $this->CategoryModel->findAll();
-
         if (!session('email')) {
             return redirect()->to(base_url('login'));
         }
+
+        $Category = $this->CategoryModel->findAll();
 
         $data = [
             'title' => 'Categories | LibProject.',
@@ -29,7 +29,6 @@ class Category extends BaseController
             'Category' => $Category
         ];
 
-        // dd($Category);
         return view('pages/category', $data);
     }
 
@@ -51,12 +50,12 @@ class Category extends BaseController
     public function save()
     {
 
-        // validasi input
-        // if(!$this->validate([
-        //     'title' => 'required|is_unique[book.title]'
-        // ])) {
-        //     return redirect()->to(base_url().'book/create')->withInput();
-        // }
+        // validasi
+        if (!$this->validate([
+            'category' => 'required'
+        ])) {
+            return redirect()->to(base_url() . 'category/edit/')->withInput();
+        }
 
         $this->CategoryModel->save([
             'category' => $this->request->getVar('category'),
@@ -76,6 +75,10 @@ class Category extends BaseController
 
     public function edit($id)
     {
+        if (!session('email')) {
+            return redirect()->to(base_url('login'));
+        }
+
         $Category = $this->CategoryModel->where(['id' => $id])->first();
         $data = [
             'title' => 'Form Edit Category',

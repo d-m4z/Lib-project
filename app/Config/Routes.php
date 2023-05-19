@@ -52,6 +52,7 @@ $routes->post('/borrow/save', 'Crud\Borrow::save');
 $routes->post('/borrow/delete/(:num)', 'Crud\Borrow::delete/$1');
 $routes->get('/borrow/edit/(:num)', 'Crud\Borrow::edit/$1');
 $routes->post('/borrow/edit', 'Crud\Borrow::editPro');
+$routes->get('/borrow/return/(:num)', 'Crud\Borrow::return/$1');
 
 // BORROWER
 $routes->get('/borrower/create', 'Crud\Borrower::create');

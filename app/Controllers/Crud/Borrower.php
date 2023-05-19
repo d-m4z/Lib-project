@@ -16,11 +16,10 @@ class Borrower extends BaseController
 
     public function borrower()
     {
-        $Borrower = $this->BorrowerModel->findAll();
-
         if (!session('email')) {
             return redirect()->to(base_url('login'));
         }
+        $Borrower = $this->BorrowerModel->findAll();
 
         $data = [
             'title' => 'Borrowers | LibProject.',
@@ -49,12 +48,15 @@ class Borrower extends BaseController
     public function save()
     {
 
-        // validasi input
-        // if(!$this->validate([
-        //     'title' => 'required|is_unique[book.title]'
-        // ])) {
-        //     return redirect()->to(base_url().'book/create')->withInput();
-        // }
+        // validasi
+        if (!$this->validate([
+            'name' => 'required',
+            'gender' => 'required',
+            'contact' => 'required',
+            'email' => 'required'
+        ])) {
+            return redirect()->to(base_url() . 'borrower/edit/')->withInput();
+        }
 
         $this->BorrowerModel->save([
             'name' => $this->request->getVar('name'),
@@ -79,6 +81,10 @@ class Borrower extends BaseController
 
     public function edit($id)
     {
+        if (!session('email')) {
+            return redirect()->to(base_url('login'));
+        }
+
         $borrower = $this->BorrowerModel->where(['id' => $id])->first();
         $data = [
             'title' => 'Form Edit Borrower',

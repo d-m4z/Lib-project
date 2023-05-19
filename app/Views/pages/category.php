@@ -30,19 +30,22 @@
                         <table id="example2" class="table table-striped table-responsive-lg table-hover">
                             <thead class="bg-dark">
                                 <tr>
+                                    <th style="width: 20px;">No</th>
                                     <th>Category</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i = 1 ?>
                                 <?php foreach ($Category as $containt) : ?>
                                     <tr>
+                                        <td><?= $i++ ?></td>
                                         <td><?= $containt['category'] ?></td>
                                         <td>
-                                            <a href="/category/edit/<?= $containt['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="/category/edit/<?= $containt['id']; ?>" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen"></i></a>
                                             <form class="d-inline" action="/category/delete/<?= $containt['id']; ?>" method="POST">
                                                 <?= csrf_field() ?>
-                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                                <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>

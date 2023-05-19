@@ -30,18 +30,21 @@
                         <table id="example2" class="table table-striped table-responsive-lg table-hover">
                             <thead class="bg-dark">
                                 <tr>
-                                    <th>Title</th>
+                                    <th style="width: 20px;">No</th>
+                                    <th style="width: 150px;">Title</th>
                                     <th>Author</th>
                                     <th>Publication_year</th>
-                                    <th>Id_publisher</th>
-                                    <th>Id_category</th>
+                                    <th>Publisher</th>
+                                    <th>Category</th>
                                     <th>Quantity</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i = 1 ?>
                                 <?php foreach ($Book as $containt) : ?>
                                     <tr>
+                                        <td><?= $i++ ?></td>
                                         <td><?= $containt['title'] ?></td>
                                         <td><?= $containt['author'] ?></td>
                                         <td><?= $containt['publication_year'] ?></td>
@@ -49,10 +52,10 @@
                                         <td><?= $containt['category'] ?></td>
                                         <td><?= $containt['quantity'] ?></td>
                                         <td>
-                                            <a href="/book/edit/<?= $containt['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="/book/edit/<?= $containt['id']; ?>" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen"></i></a>
                                             <form class="d-inline" action="/book/delete/<?= $containt['id']; ?>" method="POST">
                                                 <?= csrf_field() ?>
-                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                                <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>

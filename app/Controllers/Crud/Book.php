@@ -67,7 +67,8 @@ class Book extends BaseController
         if (!$this->validate([
             'title' => 'required|is_unique[book.title]',
             'author' => 'required',
-            'publication_year' => 'required'
+            'publication_year' => 'required',
+            'quantity' => 'required'
         ])) {
             return redirect()->to(base_url() . 'book/create')->withInput();
         }
@@ -95,6 +96,11 @@ class Book extends BaseController
 
     public function edit($id)
     {
+
+        if (!session('email')) {
+            return redirect()->to(base_url('login'));
+        }
+
         $category = $this->CategoryModel->findAll();
         $publisher = $this->PublisherModel->findAll();
         $Book = $this->BookModel->where(['id' => $id])->first();
@@ -112,7 +118,6 @@ class Book extends BaseController
     public function editPro()
     {
         $post = $this->request->getPost();
-        $check = $this->BookModel->where(['id' => $post['id']])->first();
 
         // validasi
         if (!$this->validate([

@@ -49,12 +49,14 @@ class Staff extends BaseController
     public function save()
     {
 
-        // validasi input
-        // if(!$this->validate([
-        //     'title' => 'required|is_unique[book.title]'
-        // ])) {
-        //     return redirect()->to(base_url().'book/create')->withInput();
-        // }
+        // validasi
+        if (!$this->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required'
+        ])) {
+            return redirect()->to(base_url() . 'staff/edit/')->withInput();
+        }
 
         $this->StaffModel->save([
             'name' => $this->request->getVar('name'),
@@ -76,6 +78,10 @@ class Staff extends BaseController
 
     public function edit($id)
     {
+        if (!session('email')) {
+            return redirect()->to(base_url('login'));
+        }
+
         $staff = $this->StaffModel->where(['id' => $id])->first();
         $data = [
             'title' => 'Form Edit Staff',

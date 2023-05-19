@@ -25,14 +25,20 @@
                             <?= session()->getFlashdata('msg-edit'); ?>
                         </div>
                     <?php endif; ?>
+                    <?php if (session()->getFlashdata('msg-return')) : ?>
+                        <div class="alert alert-default-success alert-dismissible" role="alert">
+                            <?= session()->getFlashdata('msg-return'); ?>
+                        </div>
+                    <?php endif; ?>
 
                     <div class="card-body">
                         <table id="example2" class="table table-striped table-responsive-lg table-hover">
                             <thead class="bg-dark">
                                 <tr>
-                                    <th>Id_borrower</th>
-                                    <th>Id_book</th>
-                                    <th>Id_staff</th>
+                                    <th style="width: 20px;">No</th>
+                                    <th>Borrower</th>
+                                    <th>Book</th>
+                                    <th>Staff</th>
                                     <th>Release_date</th>
                                     <th>Due_date</th>
                                     <th>Note</th>
@@ -40,8 +46,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i = 1 ?>
                                 <?php foreach ($Borrow as $containt) : ?>
                                     <tr>
+                                        <td><?= $i++ ?></td>
                                         <td><?= $containt['client'] ?></td>
                                         <td><?= $containt['title'] ?></td>
                                         <td><?= $containt['name'] ?></td>
@@ -49,11 +57,12 @@
                                         <td><?= $containt['due_date'] ?></td>
                                         <td><?= $containt['note'] ?></td>
                                         <td>
-                                            <a href="/borrow/edit/<?= $containt['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="/borrow/edit/<?= $containt['id']; ?>" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen"></i></a>
                                             <form class="d-inline" action="/borrow/delete/<?= $containt['id']; ?>" method="POST">
                                                 <?= csrf_field() ?>
-                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                                <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
                                             </form>
+                                            <a href="/borrow/return/<?= $containt['id']; ?>" class="btn btn-sm btn-primary"><i class="fa-solid fa-check"></i></a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

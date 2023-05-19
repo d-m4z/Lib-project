@@ -3,14 +3,27 @@
 namespace App\Controllers;
 
 use App\Models\StaffModel;
+use App\Models\BorrowModel;
+use App\Models\BookModel;
+use App\Models\BorrowerModel;
 
 class MainController extends BaseController
 {
-    protected $staffModel;
+    protected $StaffModel;
+    protected $BorrowModel;
+    protected $BookModel;
+    protected $BorrowerModel;
+    protected $CategoryModel;
+    protected $PublisherModel;
 
     public function __construct()
     {
-        $this->staffModel = new StaffModel();
+        $this->StaffModel = new StaffModel();
+        $this->BorrowModel = new BorrowModel();
+        $this->BookModel = new BookModel();
+        $this->BorrowerModel = new BorrowerModel();
+        $this->CategoryModel = new BorrowerModel();
+        $this->PublisherModel = new BorrowerModel();
     }
 
     public function index()
@@ -21,9 +34,17 @@ class MainController extends BaseController
         }
 
         $data = [
-            'title' => 'Home | LibProject.'
+            'title' => 'Home | LibProject.',
+            'qstaff' => $this->StaffModel->countAllResults(),
+            'qborrower' => $this->BorrowerModel->countAllResults(),
+            'qborrow' => $this->BorrowModel->countAllResults(),
+            'qbook' => $this->BookModel->countAllResults(),
+            'qcategory' => $this->CategoryModel->countAllResults(),
+            'qpublisher' => $this->PublisherModel->countAllResults()
         ];
+
         return view('pages/home', $data);
+
     }
 
     public function login()
@@ -37,7 +58,7 @@ class MainController extends BaseController
     public function auth()
     {
         $auth = $this->request->getPost();
-        $check = $this->staffModel->where(['email' => $auth['email']])->first();
+        $check = $this->StaffModel->where(['email' => $auth['email']])->first();
         if ($check) {
             if (md5($auth['password']) == $check['password']) {
                 $key = array(

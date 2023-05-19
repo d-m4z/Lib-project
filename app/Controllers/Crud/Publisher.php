@@ -33,7 +33,6 @@ class Publisher extends BaseController
 
     public function create()
     {
-
         if (!session('email')) {
             return redirect()->to(base_url('login'));
         }
@@ -76,6 +75,10 @@ class Publisher extends BaseController
 
     public function edit($id)
     {
+        if (!session('email')) {
+            return redirect()->to(base_url('login'));
+        }
+
         $publisher = $this->PublisherModel->where(['id' => $id])->first();
         $data = [
             'title' => 'Form Edit Publisher',
