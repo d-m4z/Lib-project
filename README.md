@@ -1,3 +1,10 @@
+# Catatan
+
+1. Tampilan mungkin tidak akan terload sempurna karena ada beberapa file yang ter gitignore
+
+
+
+
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
