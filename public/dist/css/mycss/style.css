@@ -1,0 +1,23 @@
+.under-accent{
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: #4E9F3D;
+    text-decoration-thickness: 3px;
+}
+
+.sidebar-bg-custom{
+    background-image: url(../../img/bg1-haikei.svg);
+}
+
+.navbar-bg-custom{
+    background-color: rgba(57, 62, 70, 0.5);
+}
+
+.bg-body-custom{
+    background-image: url(../../img/bg-animated.svg);
+    background-size: cover;
+}
+
+.bg-color-custom{
+    background-color: #576CBC;
+}
