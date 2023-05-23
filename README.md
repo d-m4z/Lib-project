@@ -1,12 +1,6 @@
-# Catatan
+# Atribution
 
-1. Tampilan mungkin tidak akan terload sempurna karena ada beberapa file yang ter gitignore
-
-
-
-
-
-
+Thanks to CI4, adminLTE(template), Bootstrap and Myself
 
 ## This Program Use Ci4 framework
 
