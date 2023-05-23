@@ -1,6 +1,14 @@
-# CodeIgniter 4 Application Starter
+# Catatan
 
-## What is CodeIgniter?
+1. Tampilan mungkin tidak akan terload sempurna karena ada beberapa file yang ter gitignore
+
+
+
+
+
+
+
+## This Program Use Ci4 framework
 
 CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
 More information can be found at the [official site](https://codeigniter.com).
