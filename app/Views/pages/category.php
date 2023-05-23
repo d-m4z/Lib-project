@@ -27,7 +27,7 @@
                     <?php endif; ?>
 
                     <div class="card-body">
-                        <table id="example2" class="table table-striped table-responsive-lg table-hover">
+                        <table id="example2" class="table table-striped table-responsive-sm table-hover">
                             <thead class="bg-dark">
                                 <tr>
                                     <th style="width: 20px;">No</th>

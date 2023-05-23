@@ -9,7 +9,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $title ?></title>
-
+    
+    <!-- favicon -->
+    <link rel="shortcut icon" href="<?= base_url() ?>book.ico" type="image/x-icon">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
@@ -98,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 "lengthChange": false,
                 "searching": false,
                 "ordering": true,
-                "info": false,
+                "info": true,
                 "autoWidth": false,
                 "responsive": false,
             });
