@@ -83,9 +83,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- ChartJS -->
     <script src="<?= base_url() ?>/plugins/chart.js/Chart.min.js"></script>
 
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="dist/js/pages/dashboard2.js"></script>
-
     <!-- Page specific script -->
     <script>
         $(function() {
